@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusted Motherhood & Parenting Products | Parent's Choice</title>
+    <meta name="description" content="Curated motherhood and parenting products. Expert reviews, honest recommendations for parents.">
+    <meta name="keywords" content="parenting products, baby gear, motherhood, family essentials, baby products">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f3ff 0%, #fff9e6 100%);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(102, 126, 234, 0.2);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+        }
+        
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .intro p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .category-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-category {
+            display: inline-block;
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+        
+        .product-description {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        
+        .product-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .product-link:hover {
+            opacity: 0.9;
+        }
+        
+        .about {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .about p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .disclosure {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 6px;
+        }
+        
+        .disclosure strong {
+            color: #ed8936;
+        }
+        
+        footer {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 2rem;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌟 Trusted Motherhood & Parenting Products</h1>
+        <p>Curated recommendations for modern parents • Expert reviews • Honest advice</p>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>Welcome to Parent's Choice</h2>
+            <p>
+                We understand that parenting is a journey filled with countless decisions. That's why we've curated a 
+                collection of the best motherhood and parenting products available today. Whether you're a first-time 
+                parent or experienced caregiver, our recommendations are based on quality, safety, and real-world usability.
+            </p>
+            <p>
+                Every product featured here has been selected for its impact on making parenthood easier, safer, and 
+                more enjoyable. From baby gear essentials to developmental toys, we've got you covered.
+            </p>
+            
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">Product Categories</h3>
+            <div class="categories">
+                <div class="category-tag">Feeding</div><div class="category-tag">Baby Gear</div><div class="category-tag">Carriers</div><div class="category-tag">Accessories</div><div class="category-tag">Toys</div><div class="category-tag">Diaper Care</div><div class="category-tag">Clothing</div><div class="category-tag">Sleep</div>
+            </div>
+        </div>
+        
+        <h2 style="color: #667eea; margin-bottom: 2rem; font-size: 2rem;">Featured Products</h2>
+        <div class="products">
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Baby Gear
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Baby Monitor with Night Vision</div>
+                    <div class="product-price">$89.99</div>
+                    <div class="product-category">Baby Gear</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=baby+monitor" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Carriers
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Ergonomic Baby Carrier Wrap</div>
+                    <div class="product-price">$45.99</div>
+                    <div class="product-category">Carriers</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=baby+carrier" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Toys
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Non-Toxic Wooden Toy Set</div>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-category">Toys</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=wooden+baby+toys" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Feeding
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Stainless Steel Baby Bottles</div>
+                    <div class="product-price">$24.99</div>
+                    <div class="product-category">Feeding</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=baby+bottles" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Clothing
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Organic Baby Clothing Essentials</div>
+                    <div class="product-price">$42.99</div>
+                    <div class="product-category">Clothing</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=organic+baby+clothes" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Sleep
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Sleep Training Sound Machine</div>
+                    <div class="product-price">$29.99</div>
+                    <div class="product-category">Sleep</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=baby+sound+machine" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Feeding
+                </div>
+                <div class="product-info">
+                    <div class="product-name">High Chair Portable Booster</div>
+                    <div class="product-price">$79.99</div>
+                    <div class="product-category">Feeding</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=portable+high+chair" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Toys
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Teething Relief Toy Starter Pack</div>
+                    <div class="product-price">$19.99</div>
+                    <div class="product-category">Toys</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=teething+toys" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Diaper Care
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Diaper Pail Odor Control System</div>
+                    <div class="product-price">$54.99</div>
+                    <div class="product-category">Diaper Care</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=diaper+pail" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    📦 Accessories
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Stroller Travel Organizer</div>
+                    <div class="product-price">$34.99</div>
+                    <div class="product-category">Accessories</div>
+                    <div class="product-description">
+                        Highly rated product that parents love. Safe, reliable, and built to last.
+                    </div>
+                    <a href="https://amazon.com/s?k=stroller+organizer" class="product-link" target="_blank" rel="noopener noreferrer">
+                        View on Amazon ↗
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="about">
+            <h2>Why We Recommend These Products</h2>
+            <p>
+                <strong>Quality Matters:</strong> Every product on this site is selected based on durability, safety certifications, 
+                and real parent reviews. We prioritize items that make a genuine difference in your parenting journey.
+            </p>
+            <p>
+                <strong>Safety First:</strong> We only recommend products that meet or exceed industry safety standards. 
+                Your child's safety is our top priority.
+            </p>
+            <p>
+                <strong>Honest Reviews:</strong> We don't just list products—we explain why each one is worth your attention. 
+                Our recommendations come from real experience and extensive research.
+            </p>
+            <p>
+                <strong>Value for Money:</strong> We believe great parenting products don't have to break the bank. 
+                We showcase options across different price points.
+            </p>
+            
+            <div class="disclosure">
+                <strong>📌 Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. 
+                This means when you click a link and make a purchase, we may earn a commission at no extra cost to you. 
+                We only recommend products we genuinely believe in, and we're grateful for your support that helps 
+                keep this resource free and updated.
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; {datetime.now().year} Parent's Choice. All rights reserved. | 
+        <a href="#" style="color: #667eea; text-decoration: none;">Privacy Policy</a> | 
+        <a href="#" style="color: #667eea; text-decoration: none;">Contact Us</a></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            Last updated: {datetime.now().strftime('%B %d, %Y')}
+        </p>
+    </footer>
+</body>
+</html>
